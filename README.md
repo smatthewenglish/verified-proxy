@@ -1,66 +1,6 @@
-## Foundry
+## Verifiable proxy
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
-
-Foundry consists of:
-
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
-
-## Documentation
-
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
 ```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
+forge create --rpc-url https://holesky.infura.io/v3/XXXXXX --private-key XXXXXX src/Counter.sol:Counter
+forge create --rpc-url https://holesky.infura.io/v3/XXXXXX --private-key XXXXXX src/TransparentUpgradeableProxy.sol:TransparentUpgradeableProxy  --constructor-args 0x73A0464dDDE3A52fe386b68eD307289a44F32E43 0xeE149CC775D270ca73701Edb4bc13A52c9315A3A 0x
 ```
